@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-IMAGE="xeon-ubuntu1604-ffmpeg"
+IMAGE="gst-src-debug:1"
 DIR=$(dirname $(readlink -f "$0"))
 
 . "${DIR}/../../../script/shell.sh"

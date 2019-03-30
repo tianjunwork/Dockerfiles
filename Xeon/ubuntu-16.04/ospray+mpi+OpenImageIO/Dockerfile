@@ -48,12 +48,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y -q --no-
 
 ARG EMBREE_REPO=https://github.com/embree/embree.git
 ARG EMBREE_VER=df0b324
-RUN git clone ${EMBREE_REPO}; \
-    mkdir embree/build; \
-    cd embree/build; \
-    git checkout ${EMBREE_VER}; \
-    cmake .. -Wno-dev -DEMBREE_TUTORIALS=OFF; \
-    make -j 8; \
+RUN git clone ${EMBREE_REPO} && \
+    mkdir embree/build && \
+    cd embree/build && \
+    git checkout ${EMBREE_VER} && \
+    cmake .. -Wno-dev -DEMBREE_TUTORIALS=OFF && \
+    make -j 8 && \
     make install
 
 #build ospray
